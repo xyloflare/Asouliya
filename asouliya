@@ -1,0 +1,29 @@
+#!/bin/bash
+
+mv output.log "./logs/output-$(date +'%Y-%m-%d-%H:%M:%S').log"
+sleep 1
+
+# Run node.js server in the background, redirecting both stdout and stderr to output.log
+node . >> output.log 2>&1 &
+
+# Get the process ID (PID) of the last background process
+pid=$!
+
+# Print the PID and the command being executed
+echo "$(date +'%Y-%m-%d %H:%M:%S') Server started with PID: $pid" >> output.log
+
+# Loop to respawn the server if it crashes with a non-zero exit code
+while true; do
+    wait $pid
+    exit_code=$?
+    if [ $exit_code -ne 0 ]; then
+        echo "$(date +'%Y-%m-%d %H:%M:%S') Server with PID $pid crashed with exit code $exit_code. Respawning in 60s.." >> output.log
+	sleep 60
+        node . >> output.log 2>&1 &
+        pid=$!
+        echo "$(date +'%Y-%m-%d %H:%M:%S') Server restarted with PID: $pid" >> output.log
+    else
+        echo "$(date +'%Y-%m-%d %H:%M:%S') Server with PID $pid exited gracefully with exit code $exit_code." >> output.log
+        break
+    fi
+done

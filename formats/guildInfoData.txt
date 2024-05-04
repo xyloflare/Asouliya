@@ -1,0 +1,32 @@
+
+[
+  guildInfo {
+    dataValues: {
+      id: 2,
+      serverid: '1199132586216259654',
+      prefix: '&',
+      levelRoles: false,
+      createdAt: 2024-03-02T10:19:30.526Z,
+      updatedAt: 2024-03-02T10:19:30.526Z
+    },
+    _previousDataValues: {
+      id: 2,
+      serverid: '1199132586216259654',
+      prefix: '&',
+      levelRoles: false,
+      createdAt: 2024-03-02T10:19:30.526Z,
+      updatedAt: 2024-03-02T10:19:30.526Z
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: false,
+      _schema: null,
+      _schemaDelimiter: '',
+      raw: true,
+      attributes: [Array]
+    },
+    isNewRecord: false
+  },
+  false
+]

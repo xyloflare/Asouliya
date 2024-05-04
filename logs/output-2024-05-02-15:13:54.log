@@ -1,0 +1,66 @@
+2024-05-01 09:24:02 Server started with PID: 30881
+Ready! Logged in as Asouliya#4152
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.12.2
+2024-05-01 11:57:30 Server with PID 30881 crashed with exit code 1. Respawning in 60s..
+2024-05-01 11:58:30 Server restarted with PID: 33743
+Ready! Logged in as Asouliya#4152
+DiscordAPIError[10062]: Unknown interaction
+    at handleErrors (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:722:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:826:23)
+    at async _REST.request (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:1266:22)
+    at async ChatInputCommandInteraction.deferReply (/home/xylo/Js/Asouliya/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:69:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/commands/fun/level.js:12:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/events/interactionCreate.js:41:7) {
+  requestBody: { files: undefined, json: { type: 5, data: [Object] } },
+  rawError: { message: 'Unknown interaction', code: 10062 },
+  code: 10062,
+  status: 404,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/interactions/1235118148034756639/aW50ZXJhY3Rpb246MTIzNTExODE0ODAzNDc1NjYzOTprdFZvSVF0enZnZGJIT0VlTFhzQzAwdGRqcjluZTRSSVVJVUhTQUZVdk5VRnJUbXpidFd3QzJKSmk3SnllMWlIa0wyTDNqS1ZwWVJ6RVR1N1kwdzBNemVObWNhNDNiZ0ZlbnljOUk3c1Z3SzBlaTNBY0NXUGhYNk1uZVdyWGtFdg/callback'
+}
+Err at interactionCreate.js guildid: 1199132586216259654 guildname: Chill Zone channelid: 1214163938401452082 channelname: 1235118148034756639 userid: 968019735524540466 username: ghostboyath
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.12.2
+2024-05-01 12:37:27 Server with PID 33743 crashed with exit code 1. Respawning in 60s..
+2024-05-01 12:38:27 Server restarted with PID: 34431
+Ready! Logged in as Asouliya#4152
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.12.2
+2024-05-01 14:33:13 Server with PID 34431 crashed with exit code 1. Respawning in 60s..
+2024-05-01 14:34:13 Server restarted with PID: 48595
+Ready! Logged in as Asouliya#4152

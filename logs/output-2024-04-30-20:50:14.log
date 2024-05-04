@@ -1,0 +1,18 @@
+2024-04-30 17:43:22 Server started with PID: 1757
+Ready! Logged in as Asouliya#4152
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.12.2
+2024-04-30 19:57:14 Server with PID 1757 crashed with exit code 1. Respawning in 60s..
+2024-04-30 19:58:14 Server restarted with PID: 2914
+Ready! Logged in as Asouliya#4152

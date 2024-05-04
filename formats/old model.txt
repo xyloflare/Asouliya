@@ -1,0 +1,40 @@
+
+  levelRole2: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole3: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole4: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole5: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole6: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole7: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole8: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole9: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole10: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole11: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole12: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole13: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
+  levelRole14: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+  },
