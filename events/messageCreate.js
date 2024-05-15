@@ -11,9 +11,9 @@ module.exports = {
     const client = message.client;
 
     if (
-      !message.guild.members.me.permissionsIn(message.channel.id).has(
-        PermissionsBitField.Flags.SendMessages
-      )
+      !message.guild.members.me
+        .permissionsIn(message.channel.id)
+        .has(PermissionsBitField.Flags.SendMessages)
     ) {
       return;
     }
@@ -26,7 +26,7 @@ module.exports = {
 
     const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const prefixRegex = new RegExp(
-      `^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`
+      `^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`,
     );
 
     if (message.mentions.repliedUser?.id == client.user.id)
@@ -41,15 +41,17 @@ module.exports = {
     if (!args) return;
 
     try {
-      args = args.split(' ');
+      args = args.split(" ");
       const command = client.msgCommands.get(args[0].toLowerCase());
       if (command) {
         args.shift();
-        if (command.data.dev && message.author.id != "1142001060618182746") return;
+        if (command.data.dev && message.author.id != "1142001060618182746")
+          return;
         command.execute(args, message, client);
         return;
       } else {
-        ai_handler(message, args.join(' '), client);
+        message.channel.send("Gemini AI is temporarily disabled");
+        //ai_handler(message, args.join(' '), client);
       }
     } catch (e) {
       console.log("Error at messageCreate command execution", e);
@@ -64,14 +66,14 @@ async function ai_handler(message, argsArray, client) {
   if (args.toLowerCase() == "start-chat" || args.toLowerCase() == "chat") {
     if (client.chatHistory.get(message.channel.id))
       return message.channel.send(
-        "Chat is already going on. Use `bye` to clear."
+        "Chat is already going on. Use `bye` to clear.",
       );
     client.chatHistory.set(message.channel.id, {
       lastMsg: Date.now(),
       history: [],
     });
     await message.channel.send(
-      "Hello! \nUse `reset-chat` or `bye` to clear history."
+      "Hello! \nUse `reset-chat` or `bye` to clear history.",
     );
     return;
   }
