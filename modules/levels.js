@@ -88,6 +88,13 @@ module.exports = async (message) => {
   }
 };
 
+module.exports.setLevel = async (serverId, userId, level, xp) => {
+  await database.updateGuildUser(userId, serverId, {
+    xp: xp,
+    level: level
+  });
+}
+
 module.exports.giveXp = async (serverId, userId, xpAmount) => {
   const [userData] = await database.getGuildUser(serverId, userId);
 
