@@ -97,14 +97,14 @@ const leveler = async (message) => {
   }
 };
 
-module.exports.setLevel = async (serverId, userId, level, xp) => {
+const setLevel = async (serverId, userId, level, xp) => {
   await database.updateGuildUser(userId, serverId, {
     xp: xp,
     level: level,
   });
 };
 
-module.exports.giveXp = async (serverId, userId, xpAmount) => {
+const giveXp = async (serverId, userId, xpAmount) => {
   const [userData] = await database.getGuildUser(serverId, userId);
 
   let curruntXp = userData.xp;
@@ -131,4 +131,6 @@ module.exports.giveXp = async (serverId, userId, xpAmount) => {
 
 module.exports = leveler;
 module.exports.xpCalc = xpCalculation;
+module.exports.giveXp = giveXp;
+module.exports.setLevel = setLevel;
 //export function xpCalc(lvl) {xpCalculation(lvl)};
