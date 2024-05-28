@@ -1,19 +1,21 @@
 const database = require("../modules/database");
-const xpIncrementValue = 28;
-const xpCalculation = (level) => (level == 0 ? 100 : level * level * 100);
+const xpIncrementValue = 12;
+const xpCalculation = (level) => {
+  return (level == 0 ? 50 : level * level * 100 - (level - 1) * (level - 1) * 100);
+}
 const { PermissionsBitField } = require("discord.js");
 // module.exports.xpCalculator = xpCalculation;
 
-module.exports = async (message) => {
+const leveler = async (message) => {
   const [guildData, isGuildCreatedNow] = await database.getGuildInfo(
-    message.guildId
+    message.guildId,
   );
   if (isGuildCreatedNow) return;
   if (!guildData.levelSystem) return;
 
   const [userData, isUserCreatedNow] = await database.getGuildUser(
     message.guildId,
-    message.author.id
+    message.author.id,
   );
   if (isUserCreatedNow) return;
 
@@ -50,31 +52,38 @@ module.exports = async (message) => {
     ? guildData.levelupMsg
         .replace(
           "$displayname",
-          `${message.author.globalName || message.author.username}`
+          `${message.author.globalName || message.author.username}`,
         )
         .replace("$level", `${newLevel}`)
         .replace("$user", `<@${message.author.id}>`)
         .replace("$usertag", `${message.author.username}`)
     : defaultLvlMsg;
 
-  
   try {
     if (guildData.levelMsgChannel) {
-      if (!message.guild.members.me.permissionsIn(guildData.levelMsgChannel).has(PermissionsBitField.Flags.SendMessages)) return;
+      if (
+        !message.guild.members.me
+          .permissionsIn(guildData.levelMsgChannel)
+          .has(PermissionsBitField.Flags.SendMessages)
+      )
+        return;
       const channel = message.client.channels.cache.get(
-        guildData.levelMsgChannel
+        guildData.levelMsgChannel,
       );
       channel.send(levelupMsg);
     } else message.channel.send(levelupMsg);
-  } catch(e) {return}
-    
+  } catch (e) {
+    return;
+  }
+
   // Now roles system
   if (
     !message.guild.members.me.permissions.has(
-      PermissionsBitField.Flags.ManageRoles
+      PermissionsBitField.Flags.ManageRoles,
     )
-  )
+  ) {
     return;
+  }
 
   if (
     guildData.levelRolesEnabled &&
@@ -91,9 +100,9 @@ module.exports = async (message) => {
 module.exports.setLevel = async (serverId, userId, level, xp) => {
   await database.updateGuildUser(userId, serverId, {
     xp: xp,
-    level: level
+    level: level,
   });
-}
+};
 
 module.exports.giveXp = async (serverId, userId, xpAmount) => {
   const [userData] = await database.getGuildUser(serverId, userId);
@@ -119,3 +128,7 @@ module.exports.giveXp = async (serverId, userId, xpAmount) => {
     level: currentLevel,
   };
 };
+
+module.exports = leveler;
+module.exports.xpCalc = xpCalculation;
+//export function xpCalc(lvl) {xpCalculation(lvl)};

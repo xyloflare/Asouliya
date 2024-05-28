@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require("discord.js");
 const database = require("../../modules/database.js");
-const xpCalculation = (level) => (level == 0 ? 100 : level * level * 100);
+const xpCalculation = require("../../modules/levels.js").xpCalc; //(level) => (level == 0 ? 100 : level * level * 100);
 const canvacord = require("canvacord");
 
 module.exports = {

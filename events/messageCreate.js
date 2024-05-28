@@ -50,8 +50,8 @@ module.exports = {
         command.execute(args, message, client);
         return;
       } else {
-        message.channel.send("Gemini AI is temporarily disabled");
-        //ai_handler(message, args.join(' '), client);
+        //message.channel.send("Gemini AI is temporarily disabled");
+        ai_handler(message, args.join(' '), client);
       }
     } catch (e) {
       console.log("Error at messageCreate command execution", e);

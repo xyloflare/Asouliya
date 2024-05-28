@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
 const database = require("../../modules/database.js");
 const canvacord = require("canvacord");
-const xpCalculator = (level) => (level == 0 ? 100 : level * level * 100);
+const xpCalculator = require("../../modules/levels.js").xpCalc; // = (level) => (level == 0 ? 50 : (level * level * 100) - ((level-1) * (level-1) * 100));
 
 module.exports = {
   data: new SlashCommandBuilder()
