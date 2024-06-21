@@ -1,4 +1,10 @@
-const { SlashCommandBuilder } = require("discord.js");
+const {
+  ButtonBuilder,
+  ButtonStyle,
+  SlashCommandBuilder,
+  ActionRowBuilder,
+} = require("discord.js");
+
 const database = require("../../modules/database.js");
 const xpCalculation = require("../../modules/levels.js").xpCalc; //(level) => (level == 0 ? 100 : level * level * 100);
 const canvacord = require("canvacord");
@@ -52,8 +58,19 @@ module.exports = {
       description: stringData,
     };
 
+    const leaderboardbtn = new ButtonBuilder()
+      .setURL(
+        "http://j-variable.gl.at.ply.gg:1872/leaderboard/" +
+          interaction.guild.id
+      )
+      .setLabel("View More")
+      .setStyle(ButtonStyle.Link);
+
+    const row = new ActionRowBuilder().addComponents(leaderboardbtn);
+
     await interaction.reply({
       embeds: [leaderboardEmbed],
+      components: [row],
       ephemeral: false,
     });
 

@@ -1,0 +1,124 @@
+2024-05-15 10:12:12 Server started with PID: 31342
+Ready! Logged in as Asouliya#4152
+DiscordAPIError[10062]: Unknown interaction
+    at handleErrors (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:722:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:826:23)
+    at async _REST.request (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:1266:22)
+    at async ChatInputCommandInteraction.deferReply (/home/xylo/Js/Asouliya/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:69:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/commands/fun/level.js:12:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/events/interactionCreate.js:41:7) {
+  requestBody: { files: undefined, json: { type: 5, data: [Object] } },
+  rawError: { message: 'Unknown interaction', code: 10062 },
+  code: 10062,
+  status: 404,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/interactions/1240205907283939358/aW50ZXJhY3Rpb246MTI0MDIwNTkwNzI4MzkzOTM1ODo0M2VSTlV5WHRCWWRMNEZ0VUtJQjNIM0JMSlVyVFlFdWNHeFBNbjhXZDA5cmV4QVJBYXJrdEtubWVDMng4alYwMVd1UjgwTndCZkw4NWUxNlhMTktqVHFPQUxmMEZGbzdlakpLZVQzM3g5UHZjVVVqb2Z0RWhQYjU5bkpwVVl0RQ/callback'
+}
+Err at interactionCreate.js guildid: 1236724996085383168 guildname: Furry HMP channelid: 1236732453260099654 channelname: 1240205907283939358 userid: 1194211800242192406 username: mrlushy_9752
+DiscordAPIError[40060]: Interaction has already been acknowledged.
+    at handleErrors (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:722:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:826:23)
+    at async _REST.request (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:1266:22)
+    at async ChatInputCommandInteraction.deferReply (/home/xylo/Js/Asouliya/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:69:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/commands/fun/level.js:12:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/events/interactionCreate.js:41:7) {
+  requestBody: { files: undefined, json: { type: 5, data: [Object] } },
+  rawError: {
+    message: 'Interaction has already been acknowledged.',
+    code: 40060
+  },
+  code: 40060,
+  status: 400,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/interactions/1240206250218750034/aW50ZXJhY3Rpb246MTI0MDIwNjI1MDIxODc1MDAzNDpqMVU4ZjdqbUNHUTVhWEU3eGhXSHNQRXJGZU5VRlpGRko0NUdPb2xBNDAyQ2hRYzRyNWlLUloxUGtlRFVTckZwV0J2STFpdGI2Q3RCeFAzVFVUc2k1UjduRXFXOVU4T0tGSnVLb0I4V0tlVTFFMmRCRjlVM1JZMDRaVWtHazFUeQ/callback'
+}
+Err at interactionCreate.js guildid: 1236724996085383168 guildname: Furry HMP channelid: 1236732453260099654 channelname: 1240206250218750034 userid: 1142001060618182746 username: xyloflare
+DiscordAPIError[40060]: Interaction has already been acknowledged.
+    at handleErrors (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:722:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:826:23)
+    at async _REST.request (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:1266:22)
+    at async ChatInputCommandInteraction.reply (/home/xylo/Js/Asouliya/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:111:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/commands/fun/lvl_leaderboard.js:55:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/events/interactionCreate.js:41:7) {
+  requestBody: { files: [], json: { type: 4, data: [Object] } },
+  rawError: {
+    message: 'Interaction has already been acknowledged.',
+    code: 40060
+  },
+  code: 40060,
+  status: 400,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/interactions/1240206473561116712/aW50ZXJhY3Rpb246MTI0MDIwNjQ3MzU2MTExNjcxMjpTMHpuNUpFWVRyRnZxbzdVSEpJYlVRUWRGWmhqTUpMaTBTYkg0aUFtY3ZaVWZVOE1hdWNKelFGelVLMWRuVnpyV1BYZEVUZEl4YzdtQk92UU5mSGsxcGRiaWVEcUJtajNZbDRyT2pDeDEyWlJPeVNoY3MyZVpvd2tEVlJteGVBVA/callback'
+}
+Err at interactionCreate.js guildid: 1236724996085383168 guildname: Furry HMP channelid: 1236732430677971085 channelname: 1240206473561116712 userid: 1194211800242192406 username: mrlushy_9752
+DiscordAPIError[40060]: Interaction has already been acknowledged.
+    at handleErrors (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:722:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BurstHandler.runRequest (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:826:23)
+    at async _REST.request (/home/xylo/Js/Asouliya/node_modules/@discordjs/rest/dist/index.js:1266:22)
+    at async ChatInputCommandInteraction.deferReply (/home/xylo/Js/Asouliya/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:69:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/commands/fun/level.js:12:5)
+    at async Object.execute (/home/xylo/Js/Asouliya/events/interactionCreate.js:41:7) {
+  requestBody: { files: undefined, json: { type: 5, data: [Object] } },
+  rawError: {
+    message: 'Interaction has already been acknowledged.',
+    code: 40060
+  },
+  code: 40060,
+  status: 400,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/interactions/1240206524215988305/aW50ZXJhY3Rpb246MTI0MDIwNjUyNDIxNTk4ODMwNTpsc0k0ekJCelNBVTI2aWRjb0pjbnAxdkJRSndoNk10WVNaUG84TFU1dlRqUkkweldPZVFZTUxsZ3YwWlRpQm9VbGthTEhHUnFlWDJzSkJaZDhCa2syM0FxSlRpVDlhbDRGN3dFTHlpTGw2QmRhSmlyRzhVSXIybVcxSVZuOVZ3Zg/callback'
+}
+Err at interactionCreate.js guildid: 1236724996085383168 guildname: Furry HMP channelid: 1236732430677971085 channelname: 1240206524215988305 userid: 1194211800242192406 username: mrlushy_9752
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.13.0
+2024-05-15 13:08:24 Server with PID 31342 crashed with exit code 1. Respawning in 60s..
+2024-05-15 13:09:24 Server restarted with PID: 60718
+Ready! Logged in as Asouliya#4152
+2024-05-15 13:20:05 Server with PID 60718 crashed with exit code 1. Respawning in 60s..
+2024-05-15 13:21:05 Server restarted with PID: 61185
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.13.0
+2024-05-15 13:21:16 Server with PID 61185 crashed with exit code 1. Respawning in 60s..
+2024-05-15 13:22:16 Server restarted with PID: 61259
+node:internal/process/promises:289
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
+    at /home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
+    at Immediate._onImmediate (/home/xylo/Js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
+    at process.processImmediate (node:internal/timers:478:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v20.13.0
+2024-05-15 13:22:34 Server with PID 61259 crashed with exit code 1. Respawning in 60s..
+2024-05-15 13:23:34 Server restarted with PID: 61298
+Ready! Logged in as Asouliya#4152

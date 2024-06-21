@@ -1,5 +1,5 @@
 const database = require("../modules/database");
-const xpIncrementValue = 12;
+const xpIncrementValue = 18;
 const xpCalculation = (level) => {
   return (level == 0 ? 50 : level * level * 100 - (level - 1) * (level - 1) * 100);
 }

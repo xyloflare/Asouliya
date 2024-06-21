@@ -3,9 +3,13 @@ module.exports = {
     name: "eval",
     dev: true,
   },
-  execute(args, message) {
-    const evalcmd = eval(args.join(" "))
+  async execute(args, message) {
+    try {
+    const evalcmd = await eval(args.join(" "))
 
-    message.channel.send("```" + evalcmd + "\n```");
+    await message.channel.send("```" + evalcmd + "\n```");
+    } catch (e) {
+      message.channel.send("err: "+e);
+    }
   },
 };
