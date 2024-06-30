@@ -20,7 +20,7 @@ module.exports = {
 
     const now = Date.now();
     const timestamps = cooldowns.get(command.data.name);
-    const defaultCooldownDuration = 2;
+    const defaultCooldownDuration = 5;
     const cooldownAmount =
       (command.cooldown ?? defaultCooldownDuration) * 1_000;
 
@@ -56,11 +56,11 @@ module.exports = {
           console.log(
             "Err at interactionCreate.js",
             "guildid: " + interaction.guildId,
-            'guildname: ' + interaction.guild.name,
+            "guildname: " + interaction.guild.name,
             "channelid: " + interaction.channelId,
             "channelname: " + interaction,
             "userid: " + interaction.user.id,
-            "username: " +interaction.user.username
+            "username: " + interaction.user.username
           );
         }
       }

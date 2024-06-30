@@ -1,4 +1,4 @@
-const { PermissionsBitField } = require("discord.js");
+const { PermissionsBitField, Collection } = require("discord.js");
 
 module.exports = (message) => {
   if (
@@ -7,6 +7,26 @@ module.exports = (message) => {
       .has(PermissionsBitField.Flags.AddReactions)
   )
     return;
+
+  const { cooldowns } = message.client;
+
+  const thisCmd = "palindrome";
+  if (!cooldowns.has(thisCmd)) {
+    cooldowns.set(thisCmd, new Collection());
+  }
+
+  const now = Date.now();
+  const timestamps = cooldowns.get(thisCmd);
+  const defaultCooldownDuration = 10;
+  const cooldownAmount = defaultCooldownDuration * 1_000;
+  if (timestamps.has(message.user.id)) {
+    const expirationTime = timestamps.get(message.user.id) + cooldownAmount;
+    if (now < expirationTime) {
+      //const expiredTimestamp = Math.round(expirationTime / 1_000);
+      return;
+    }
+  }
+
   try {
     let content = message.content.toLowerCase();
     if (containsShrimp(content)) message.react("🦐");

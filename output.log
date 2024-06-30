@@ -1,18 +1,24 @@
-2024-06-06 18:35:37 Server started with PID: 38245
-Ready! Logged in as Asouliya#4152
-node:internal/process/promises:289
-            triggerUncaughtException(err, true /* fromPromise */);
-            ^
+2024-06-30 14:58:33 Server started with PID: 11791
+node:internal/modules/cjs/loader:1148
+  throw err;
+  ^
 
-ConnectTimeoutError: Connect Timeout Error
-    at onConnectTimeout (/home/xylo/dev/js/Asouliya/node_modules/undici/lib/core/connect.js:186:24)
-    at /home/xylo/dev/js/Asouliya/node_modules/undici/lib/core/connect.js:133:46
-    at Immediate._onImmediate (/home/xylo/dev/js/Asouliya/node_modules/undici/lib/core/connect.js:174:9)
-    at process.processImmediate (node:internal/timers:478:21) {
-  code: 'UND_ERR_CONNECT_TIMEOUT'
+Error: Cannot find module 'discord.js'
+Require stack:
+- /home/xylo/dev/js/Asouliya/main.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1145:15)
+    at Module._load (node:internal/modules/cjs/loader:986:27)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (/home/xylo/dev/js/Asouliya/main.js:3:59)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/xylo/dev/js/Asouliya/main.js' ]
 }
 
-Node.js v20.14.0
-2024-06-06 20:34:17 Server with PID 38245 crashed with exit code 1. Respawning in 60s..
-2024-06-06 20:35:17 Server restarted with PID: 42227
-Ready! Logged in as Asouliya#4152
+Node.js v20.15.0
+2024-06-30 14:58:33 Server with PID 11791 crashed with exit code 1. Respawning in 60s..
