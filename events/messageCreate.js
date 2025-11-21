@@ -18,8 +18,8 @@ module.exports = {
       return;
     }
 
-    palindrome(message);
-    levels(message);
+    //palindrome(message);
+    //levels(message);
 
     const prefix = "a!";
     let args;
@@ -54,7 +54,7 @@ module.exports = {
         return;
       } else {
         //message.channel.send("Gemini AI is temporarily disabled");
-        ai_handler(message, args.join(" "), client);
+        //ai_handler(message, args.join(" "), client);
       }
     } catch (e) {
       console.log("Error at messageCreate command execution", e);

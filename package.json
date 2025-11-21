@@ -11,15 +11,16 @@
   "license": "",
   "dependencies": {
     "@google/generative-ai": "^0.3.1",
-    "canvacord": "^6.0.1",
+    "canvacord": "^6.0.4",
     "canvas": "^2.11.2",
     "cors": "^2.8.5",
-    "discord.js": "^14.14.1",
-    "express": "^4.19.2",
+    "discord.js": "^14.25.0",
+    "express": "^4.21.2",
     "node-fetch": "^2.7.0",
-    "pg": "^8.11.3",
+    "node-gyp": "^12.1.0",
+    "pg": "^8.16.3",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.1",
+    "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
   }
 }

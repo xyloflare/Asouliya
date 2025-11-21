@@ -4,11 +4,12 @@ export default {
     password: "",
     database: "database",
     host: "127.0.0.1",
-    dialect: "postgres"
+    dialect: "postgres",
   },
 
-  Name: "Asouliya",
-  token: "MTIxMDY0MTU5NzYyMDgxMzk1Nw.GkvbWP.XWXcKRDasBdiLD7QTPtZExdSWUbpiahBUX9LLk",
-  clientId: "1210641597620813957",
-  guildId: "1188471573078868008"
-}
+  Name: "Test for piney and changli",
+  token:
+    "MTQ0MDk4ODk4NjczMzYyOTUzMQ.GWmsW2.RcE7GO29MDGxRuaV_XOVeZx6WsNgqqKDJl4uSc",
+  clientId: "1440988986733629531",
+  guildId: "1188471573078868008",
+};
