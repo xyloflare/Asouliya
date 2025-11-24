@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   db: {
     username: "root",
     password: "",
@@ -9,7 +9,7 @@ export default {
 
   Name: "Test for piney and changli",
   token:
-    "MTQ0MDk4ODk4NjczMzYyOTUzMQ.GWmsW2.RcE7GO29MDGxRuaV_XOVeZx6WsNgqqKDJl4uSc",
-  clientId: "1440988986733629531",
+    "MTIxMDY0MTU5NzYyMDgxMzk1Nw.GDJSB0.Tlyj6KKj5Yjx6kFnLITFB4sWuGxxTY7tpVOJko",
+  clientId: "1210641597620813957",
   guildId: "1188471573078868008",
 };

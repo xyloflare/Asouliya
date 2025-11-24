@@ -1,10 +1,12 @@
-const database = require("../modules/database");
+import * as database from "./database.mjs";
+
 const xpIncrementValue = 18;
 const xpCalculation = (level) => {
-  return (level == 0 ? 50 : level * level * 100 - (level - 1) * (level - 1) * 100);
-}
-const { PermissionsBitField } = require("discord.js");
-// module.exports.xpCalculator = xpCalculation;
+  return level == 0
+    ? 50
+    : level * level * 100 - (level - 1) * (level - 1) * 100;
+};
+import { PermissionsBitField } from "discord.js";
 
 const leveler = async (message) => {
   const [guildData, isGuildCreatedNow] = await database.getGuildInfo(
@@ -50,13 +52,13 @@ const leveler = async (message) => {
 
   let levelupMsg = guildData.levelupMsg
     ? guildData.levelupMsg
-        .replace(
-          "$displayname",
-          `${message.author.globalName || message.author.username}`,
-        )
-        .replace("$level", `${newLevel}`)
-        .replace("$user", `<@${message.author.id}>`)
-        .replace("$usertag", `${message.author.username}`)
+      .replace(
+        "$displayname",
+        `${message.author.globalName || message.author.username}`,
+      )
+      .replace("$level", `${newLevel}`)
+      .replace("$user", `<@${message.author.id}>`)
+      .replace("$usertag", `${message.author.username}`)
     : defaultLvlMsg;
 
   try {
@@ -92,6 +94,7 @@ const leveler = async (message) => {
     try {
       message.member.roles.add(guildData.levelRoles[`level_${newLevel}`]);
     } catch (e) {
+      console.log(e);
       return;
     }
   }
@@ -129,8 +132,9 @@ const giveXp = async (serverId, userId, xpAmount) => {
   };
 };
 
-module.exports = leveler;
-module.exports.xpCalc = xpCalculation;
-module.exports.giveXp = giveXp;
-module.exports.setLevel = setLevel;
-//export function xpCalc(lvl) {xpCalculation(lvl)};
+export default leveler;
+export const xpCalc = xpCalculation;
+const _giveXp = giveXp;
+export { _giveXp as giveXp };
+const _setLevel = setLevel;
+export { _setLevel as setLevel };

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A fun discord bot",
   "main": "main.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node .",
     "deploy": "node deploy-commands.js"
   },
-  "author": "Dev. Mobot",
+  "author": "Mohit Panwar",
   "license": "",
   "dependencies": {
     "@google/generative-ai": "^0.3.1",

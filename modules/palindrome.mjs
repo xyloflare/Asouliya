@@ -1,6 +1,6 @@
-const { PermissionsBitField, Collection } = require("discord.js");
+import { PermissionsBitField, Collection } from "discord.js";
 
-module.exports = (message) => {
+export default (message) => {
   if (
     !message.guild.members.me
       .permissionsIn(message.channel.id)
@@ -19,8 +19,8 @@ module.exports = (message) => {
   const timestamps = cooldowns.get(thisCmd);
   const defaultCooldownDuration = 10;
   const cooldownAmount = defaultCooldownDuration * 1_000;
-  if (timestamps.has(message.user.id)) {
-    const expirationTime = timestamps.get(message.user.id) + cooldownAmount;
+  if (timestamps.has(message.author.id)) {
+    const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
     if (now < expirationTime) {
       //const expiredTimestamp = Math.round(expirationTime / 1_000);
       return;
@@ -29,7 +29,8 @@ module.exports = (message) => {
 
   try {
     let content = message.content.toLowerCase();
-    if (containsShrimp(content)) message.react("🦐");
+    //if (containsShrimp(content)) message.react("🦐");
+    if (content.includes("shrimp")) message.react("🦐");
     if (content.includes("gatito")) message.react("1199693039623491624");
     if (content.includes("ghost")) message.react("👻");
     if (content.includes("bunny")) message.react("🐇");
@@ -39,10 +40,11 @@ module.exports = (message) => {
 
     if (content.includes("shrimps")) {
       message.react("🍤");
+      message.react("1442176823608741930");
+      message.react("1217870135852011620");
       message.react("1217870128427827311");
       message.react("1217870132785844265");
       message.react("1217870138557337690");
-      message.react("1217870135852011620");
     }
   } catch (e) {
     console.log(e);
@@ -50,17 +52,13 @@ module.exports = (message) => {
 };
 
 function containsShrimp(input) {
-  if (input.match(/http/)) return;
+  if (input.match(/http/)) return false;
   const shrimpLetters = ["s", "h", "r", "i", "m", "p"];
-  const inputLetters = input.toLowerCase().match(/[a-z]/g); // Extracting only letters and converting to lowercase
-  const uniqueInputLetters = [...new Set(inputLetters)]; // Removing duplicate letters
-
+  const inputLetters = input.toLowerCase().match(/[a-z]/g);
+  const uniqueInputLetters = [...new Set(inputLetters)];
   for (let letter of shrimpLetters) {
-    if (!uniqueInputLetters.includes(letter)) {
-      return false;
-    }
+    if (!uniqueInputLetters.includes(letter)) return false;
   }
-
   return true;
 }
 

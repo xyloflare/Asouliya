@@ -1,4 +1,5 @@
-const { Sequelize, DataTypes } = require("sequelize");
+import { Sequelize, DataTypes } from "sequelize";
+
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "./database.sqlite",
@@ -63,12 +64,12 @@ const guildUserInfo = sequelize.define("guildUserInfo", {
   },
 });
 
-function initialize() {
+export function initialize() {
   guildUserInfo.sync();
   guildInfo.sync();
 }
 // update methods -------------------------------
-async function updateGuildInfo(serverid, data) {
+export async function updateGuildInfo(serverid, data) {
   if (!data) return;
   const UpdatedRows = await guildInfo.update(
     {
@@ -85,13 +86,12 @@ async function updateGuildInfo(serverid, data) {
       where: {
         serverid: `${serverid}`,
       },
-    }
-  );
-  if (!UpdatedRows > 0) {
+    },
+  ); if (!UpdatedRows > 0) {
     console.log("Error editing guildInfo database where serverid: " + serverid);
   }
 }
-async function updateGuildUser(userid, serverid, data) {
+export async function updateGuildUser(userid, serverid, data) {
   if (!data) return;
   let updatedRows = guildUserInfo.update(
     {
@@ -103,19 +103,19 @@ async function updateGuildUser(userid, serverid, data) {
         serverid: serverid,
         userid: userid,
       },
-    }
+    },
   );
   if (!updatedRows > 0) console.log("error updating guilduserinfo");
 }
 // Delete methods -------------------------
-async function deleteGuildInfo(serverid) {
+export async function deleteGuildInfo(serverid) {
   try {
     await guildInfo.destroy({ where: { serverid: `${serverid}` } });
   } catch (err) {
     console.log("Error in deleteGuildInfo in database", err);
   }
 }
-async function deleteGuildUser(userid, serverid) {
+export async function deleteGuildUser(userid, serverid) {
   try {
     await guildUserInfo.destroy({
       where: { serverid: `${serverid}`, userid: `${userid}` },
@@ -127,7 +127,7 @@ async function deleteGuildUser(userid, serverid) {
   }
 }
 // Get methods -----------------------------
-async function getGuildInfo(serverid) {
+export async function getGuildInfo(serverid) {
   const guildData = await guildInfo.findOrCreate({
     where: { serverid: `${serverid}` },
   });
@@ -135,7 +135,7 @@ async function getGuildInfo(serverid) {
   return guildData;
 }
 
-async function getGuildUser(serverid, userid) {
+export async function getGuildUser(serverid, userid) {
   const guildUserData = await guildUserInfo.findOrCreate({
     where: { serverid: `${serverid}`, userid: `${userid}` },
   });
@@ -143,7 +143,7 @@ async function getGuildUser(serverid, userid) {
   return guildUserData;
 }
 
-async function getAllGuildUsers(serverid) {
+export async function getAllGuildUsers(serverid) {
   let data = await guildUserInfo.findAll({
     where: {
       serverid: serverid,
@@ -153,13 +153,12 @@ async function getAllGuildUsers(serverid) {
   return data;
 }
 
-module.exports = {
-  initialize,
-  getGuildInfo,
-  getGuildUser,
-  updateGuildInfo,
-  updateGuildUser,
-  deleteGuildInfo,
-  deleteGuildUser,
-  getAllGuildUsers,
-};
+// module.exports = {
+//   initialize,
+//   getGuildInfo,
+//   getGuildUser,
+//   updateGuildInfo,
+//   updateGuildUser,
+//   deleteGuildInfo,
+//   deleteGuildUser,
+// };

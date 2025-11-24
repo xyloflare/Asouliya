@@ -1,10 +1,6 @@
-const {
-  Client,
-  ActivityType,
-  GatewayIntentBits,
-  Events,
-} = require("discord.js");
-const { token } = require("./config.json");
+import { Client, ActivityType, GatewayIntentBits, Events } from "discord.js";
+import { token } from "./config.js";
+
 const client = new Client({
   intents: [GatewayIntentBits.Guilds],
   allowedMentions: { parse: ["users", "roles"], repliedUser: true },

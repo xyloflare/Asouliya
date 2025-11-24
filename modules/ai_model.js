@@ -1,11 +1,11 @@
-const {
+import {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
-} = require("@google/generative-ai");
+} from "@google/generative-ai";
 
-const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = "AIzaSyDJ0NuqrIUkWG70ElKn6f9T5aepcbnHS-E";
+const MODEL_NAME = "";
+import { api_key as API_KEY } from "../config.js";
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: MODEL_NAME });
@@ -69,7 +69,6 @@ async function run(message, text, channel, client) {
         parts: [{ text: responsetext || "*model did not respond*" }],
       });
       channelHistory.lastMsg = Date.now();
-
     } catch (e) {
       console.log("error in ai_model in chat mode", e);
       channel.send(e);
@@ -102,7 +101,7 @@ async function run(message, text, channel, client) {
   }
 }
 
-module.exports = run;
+export default run;
 
 function splitMessage(message) {
   const maxLength = 2000;

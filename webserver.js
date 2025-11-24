@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const cors = require("cors");
+import cors from "cors";
 const port = 5000;
-const path = require("node:path");
+import { join } from "node:path";
 
 app.use(cors());
 
@@ -13,10 +13,10 @@ app.use((req, res, next) => {
     res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
     res.header("Expires", "-1");
     res.header("Pragma", "no-cache");
-    res.sendFile(path.join(__dirname, "dist", "index.html"));
+    res.sendFile(join(__dirname, "dist", "index.html"));
   }
 });
-app.use("/", express.static(path.join(__dirname, "dist")));
+app.use("/", express.static(join(__dirname, "dist")));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
