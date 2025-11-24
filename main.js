@@ -22,7 +22,7 @@ const commandFolders = readdirSync(foldersPath);
 for (const folder of commandFolders) {
   const commandsPath = join(foldersPath, folder);
   const commandFiles = readdirSync(commandsPath).filter((file) =>
-    file.endsWith(".mjs"),
+    file.endsWith("js"),
   );
 
   for (const file of commandFiles) {
@@ -45,7 +45,7 @@ const msgCmdFolders = readdirSync(msdCmdsPath);
 for (const folder of msgCmdFolders) {
   const commandsPath = join(msdCmdsPath, folder);
   const commandFiles = readdirSync(commandsPath).filter((file) =>
-    file.endsWith(".mjs"),
+    file.endsWith("js"),
   );
 
   for (const file of commandFiles) {
@@ -64,7 +64,7 @@ for (const folder of msgCmdFolders) {
 
 const eventsPath = join(__dirname, "events");
 const eventFiles = readdirSync(eventsPath).filter((file) =>
-  file.endsWith(".mjs"),
+  file.endsWith("js"),
 );
 
 for (const file of eventFiles) {

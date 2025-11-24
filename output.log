@@ -1,0 +1,57 @@
+2025-11-24 17:14:56 Server started with PID: 10325
+Website frontend listening on port 8000
+Web api listening on port 5000
+node:internal/process/promises:332
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+ConnectTimeoutError: Connect Timeout Error (attempted addresses: 162.159.138.232:443, 162.159.128.233:443, 162.159.135.232:443, timeout: 10000ms)
+    at onConnectTimeout (/home/xylo/dev/nodejs/Asouliya/node_modules/undici/lib/core/connect.js:237:24)
+    at Immediate._onImmediate (/home/xylo/dev/nodejs/Asouliya/node_modules/undici/lib/core/connect.js:206:11)
+    at process.processImmediate (node:internal/timers:504:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v25.2.1
+2025-11-24 17:15:07 Server with PID 10325 crashed with exit code 1. Respawning in 60s..
+2025-11-24 17:16:07 Server restarted with PID: 10781
+Website frontend listening on port 8000
+Web api listening on port 5000
+node:internal/process/promises:332
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+ConnectTimeoutError: Connect Timeout Error (attempted addresses: 162.159.137.232:443, timeout: 10000ms)
+    at onConnectTimeout (/home/xylo/dev/nodejs/Asouliya/node_modules/undici/lib/core/connect.js:237:24)
+    at Immediate._onImmediate (/home/xylo/dev/nodejs/Asouliya/node_modules/undici/lib/core/connect.js:206:11)
+    at process.processImmediate (node:internal/timers:504:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
+
+Node.js v25.2.1
+2025-11-24 17:16:19 Server with PID 10781 crashed with exit code 1. Respawning in 60s..
+2025-11-24 17:17:19 Server restarted with PID: 10813
+Website frontend listening on port 8000
+Web api listening on port 5000
+Ready! Logged in as Asouliya#4152
+DiscordAPIError[10062]: Unknown interaction
+    at handleErrors (/home/xylo/dev/nodejs/Asouliya/node_modules/@discordjs/rest/dist/index.js:762:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async BurstHandler.runRequest (/home/xylo/dev/nodejs/Asouliya/node_modules/@discordjs/rest/dist/index.js:866:23)
+    at async _REST.request (/home/xylo/dev/nodejs/Asouliya/node_modules/@discordjs/rest/dist/index.js:1307:22)
+    at async ChatInputCommandInteraction.reply (/home/xylo/dev/nodejs/Asouliya/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)
+    at async Module.execute (file:///home/xylo/dev/nodejs/Asouliya/commands/fun/lvl_leaderboard.mjs:63:3)
+    at async Module.execute (file:///home/xylo/dev/nodejs/Asouliya/events/interactionCreate.mjs:36:5) {
+  requestBody: { files: [], json: { type: 4, data: [Object] } },
+  rawError: { message: 'Unknown interaction', code: 10062 },
+  code: 10062,
+  status: 404,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/interactions/1442490359740366891/aW50ZXJhY3Rpb246MTQ0MjQ5MDM1OTc0MDM2Njg5MTpEdm9JSU54TXpmMXZVY254T2pPaVZ3dTd0ckMzWFZxM2gxQW5HUWQwWFBrYkx5dzJTVmV6M3loZ0dMZDRyaWFJMHRtN1dSVkNtMVBOZHdtVmUxdlZJVlZTeERZY1dsbVRaMEZpdnExRUM3OXlqd0tQOGJjTGFoYmVEeEJVdnkycw/callback?with_response=false'
+}
+Err at interactionCreate.js guildid: 1438669419437101116 guildname: ctrl+z boredom channelid: 1442489689771737169 channelname: 1442490359740366891 userid: 791154932711555112 username: nightfury2170
+HELLL JAA!!
+2025-11-24 21:48:20 Server started with PID: 34934
+Website frontend listening on port 8000
+Web api listening on port 5000
+Ready! Logged in as Asouliya#4152
