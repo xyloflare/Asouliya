@@ -1,4 +1,4 @@
-node_modules
-./config.js
-output.log
-./logs
+node_modules/
+config.js
+*.log
+logs
