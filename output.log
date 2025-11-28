@@ -55,3 +55,13 @@ HELLL JAA!!
 Website frontend listening on port 8000
 Web api listening on port 5000
 Ready! Logged in as Asouliya#4152
+2025-11-26 17:42:20 Server started with PID: 22050
+Website frontend listening on port 8000
+Web api listening on port 5000
+Ready! Logged in as Asouliya#4152
+2025-11-26 17:42:52 Server with PID 22050 crashed with exit code 1. Respawning in 60s..
+2025-11-26 17:43:52 Server restarted with PID: 22098
+Website frontend listening on port 8000
+Web api listening on port 5000
+Ready! Logged in as Asouliya#4152
+attempted to add role

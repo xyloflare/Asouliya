@@ -78,20 +78,19 @@ const leveler = async (message) => {
     return;
   }
 
-  // Now roles system
   if (
     !message.guild.members.me.permissions.has(
       PermissionsBitField.Flags.ManageRoles,
     )
-  ) {
-    return;
-  }
+  ) return console.log('missing perms to add role', message.guild.name);
 
   if (
     guildData.levelRolesEnabled &&
-    guildData.levelRoles[`level_${newLevel}`]
+    guildData.levelRoles[`level_${newLevel}`] &&
+    !message.member.roles.cache.some((role) => role.id === guildData.levelRoles[`level_${newLevel}`])
   ) {
     try {
+      console.log('attempted to add role')
       message.member.roles.add(guildData.levelRoles[`level_${newLevel}`]);
     } catch (e) {
       console.log(e);
